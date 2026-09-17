@@ -126,12 +126,28 @@ nav ul li:hover ul{
 }
 
 /*    logo / image size     */
-nav > ul > li:first-child a{
+/* fixed the image so it would scale relative to everything else... */
+
+/* had to use flex-direction column and flex grow to force the 
+a to take up the full height,
+
+then position relative and position absolute to make the image
+be the full height automatically */
+
+nav > ul > li:first-child{
     display:flex;
+    flex-direction:column;
 }
 
-nav img{
-    height:25px;
+nav > ul > li:first-child a{
+    position:relative;
+    flex-grow:1;
+    padding-top:0;
+}
+
+nav a img{
+    position:absolute;
+    height:100%;
 }
 
 
